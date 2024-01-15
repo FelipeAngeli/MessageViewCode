@@ -7,7 +7,22 @@
 
 import UIKit
 
+enum TypeConversationOrConstant{
+    case conversation
+    case contact
+}
+
+protocol NavViewProtocol:AnyObject{
+    func typeScreenMessage(type:TypeConversationOrConstant)
+}
+
 class NavView: UIView {
+    
+    weak private var delegate:NavViewProtocol?
+    
+    func delegate(delegate:NavViewProtocol?) {
+        self.delegate = delegate
+    }
     
     lazy var navBackGroundView:UIView = {
         let view = UIView()
@@ -64,12 +79,94 @@ class NavView: UIView {
         return stack
     }()
     
+    lazy var conversationButton:UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(systemName:"message")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        button.tintColor = .systemPink
+        button.addTarget(self, action: #selector(self.tappedConversationButton), for: .touchUpInside)
+        return button
+    }()
+    
+    
+    lazy var contactButton:UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(named: "group")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        button.tintColor = .systemPink
+        button.addTarget(self, action: #selector(self.tappedContactButton), for: .touchUpInside)
+        return button
+    }()
+    
+    
+    @objc func tappedContactButton(){
+        self.delegate?.typeScreenMessage(type: .conversation)
+        self.conversationButton.tintColor = .black
+        self.contactButton.tintColor = .systemPink
+    }
+    
+    @objc func tappedConversationButton(){
+        self.delegate?.typeScreenMessage(type: .contact)
+        self.conversationButton.tintColor = .systemPink
+        self.contactButton.tintColor = .black
+    }
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.addElemented()
+        self.setUpConstraints()
+    }
+    
+    func addElemented() {
+        self.addSubview(self.navBackGroundView)
+        self.navBackGroundView.addSubview(self.navbar)
+        self.navbar.addSubview(self.searchbar)
+        self.navbar.addSubview(self.stackView)
+        self.searchbar.addSubview(self.searchLabel)
+        self.searchbar.addSubview(self.searchBtn)
+        self.stackView.addArrangedSubview(self.conversationButton)
+        self.stackView.addArrangedSubview(self.contactButton)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func setUpConstraints(){
+        NSLayoutConstraint.activate([
+            self.navBackGroundView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            self.navBackGroundView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            self.navBackGroundView.topAnchor.constraint(equalTo: self.topAnchor),
+            self.navBackGroundView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            
+            self.navbar.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
+            self.navbar.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            self.navbar.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            self.navbar.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            
+            self.searchbar.leadingAnchor.constraint(equalTo: self.navbar.leadingAnchor, constant: 30),
+            self.searchbar.centerYAnchor.constraint(equalTo: self.navbar.centerYAnchor),
+            self.searchbar.trailingAnchor.constraint(equalTo: self.stackView.leadingAnchor, constant: -20),
+            self.searchbar.heightAnchor.constraint(equalToConstant: 55),
+            
+            self.stackView.trailingAnchor.constraint(equalTo: self.navbar.trailingAnchor, constant: -30),
+            self.stackView.centerYAnchor.constraint(equalTo: self.navbar.centerYAnchor),
+            self.stackView.widthAnchor.constraint(equalToConstant: 100),
+            self.stackView.heightAnchor.constraint(equalToConstant: 30),
+            
+            self.searchLabel.leadingAnchor.constraint(equalTo: self.searchbar.leadingAnchor, constant: 25),
+            self.searchLabel.centerYAnchor.constraint(equalTo: self.searchbar.centerYAnchor),
+            
+            self.searchBtn.trailingAnchor.constraint(equalTo: self.searchbar.trailingAnchor, constant: -20),
+            self.searchBtn.centerYAnchor.constraint(equalTo: self.searchbar.centerYAnchor),
+            self.searchBtn.widthAnchor.constraint(equalToConstant: 20),
+            self.searchBtn.heightAnchor.constraint(equalToConstant: 20),
+
+            
+        ])
+    }
+    
+    
+
 }
