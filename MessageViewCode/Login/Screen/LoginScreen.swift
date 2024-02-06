@@ -48,7 +48,7 @@ class LoginScreen: UIView {
         tf.borderStyle = .roundedRect
         tf.keyboardType = .emailAddress
         tf.placeholder = "Digite seu Email:"
-        tf.text = "felipe@gmail.com"
+//        tf.text = "felipe@gmail.com"
         tf.textColor = .darkGray
         return tf
     }()
@@ -60,8 +60,8 @@ class LoginScreen: UIView {
         tf.backgroundColor = .white
         tf.borderStyle = .roundedRect
         tf.keyboardType = .default
-        tf.placeholder = "Digite sua Senha:"
-        tf.text = "123456"
+        tf.placeholder = "Digite sunha Senha:"
+//        tf.text = "123456"
         tf.isSecureTextEntry = true
         tf.textColor = .darkGray
         return tf

@@ -53,7 +53,7 @@
 		939C891C2B51A6B00092A73D /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		939C891E2B51A70B0092A73D /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		939C89212B51A7CE0092A73D /* NavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavView.swift; sourceTree = "<group>"; };
-		93F2BACE2B5060F80003B45B /* MessageCursoViewCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MessageCursoViewCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		93F2BACE2B5060F80003B45B /* MessageViewCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MessageViewCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93F2BAD12B5060F80003B45B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93F2BAD32B5060F80003B45B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		93F2BADA2B5060FA0003B45B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -197,7 +197,7 @@
 		93F2BAC52B5060F80003B45B = {
 			isa = PBXGroup;
 			children = (
-				93F2BAD02B5060F80003B45B /* MessageCursoViewCode */,
+				93F2BAD02B5060F80003B45B /* MessageViewCode */,
 				93F2BACF2B5060F80003B45B /* Products */,
 				1C3A7F6D9DFFD08143B5AB2E /* Pods */,
 				5E459CB0F73811799D18B34F /* Frameworks */,
@@ -207,12 +207,12 @@
 		93F2BACF2B5060F80003B45B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				93F2BACE2B5060F80003B45B /* MessageCursoViewCode.app */,
+				93F2BACE2B5060F80003B45B /* MessageViewCode.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		93F2BAD02B5060F80003B45B /* MessageCursoViewCode */ = {
+		93F2BAD02B5060F80003B45B /* MessageViewCode */ = {
 			isa = PBXGroup;
 			children = (
 				932CBF872B6148B6008E36F5 /* ChatViewController */,
@@ -228,7 +228,7 @@
 				93F2BADC2B5060FA0003B45B /* LaunchScreen.storyboard */,
 				93F2BADF2B5060FA0003B45B /* Info.plist */,
 			);
-			path = MessageCursoViewCode;
+			path = MessageViewCode;
 			sourceTree = "<group>";
 		};
 		93F2BAE52B5061A30003B45B /* Utils */ = {
@@ -323,9 +323,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		93F2BACD2B5060F80003B45B /* MessageCursoViewCode */ = {
+		93F2BACD2B5060F80003B45B /* MessageViewCode */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 93F2BAE22B5060FA0003B45B /* Build configuration list for PBXNativeTarget "MessageCursoViewCode" */;
+			buildConfigurationList = 93F2BAE22B5060FA0003B45B /* Build configuration list for PBXNativeTarget "MessageViewCode" */;
 			buildPhases = (
 				194C3181BCF8C44A8AE0285F /* [CP] Check Pods Manifest.lock */,
 				93F2BACA2B5060F80003B45B /* Sources */,
@@ -337,9 +337,9 @@
 			);
 			dependencies = (
 			);
-			name = MessageCursoViewCode;
+			name = MessageViewCode;
 			productName = MessageCursoViewCode;
-			productReference = 93F2BACE2B5060F80003B45B /* MessageCursoViewCode.app */;
+			productReference = 93F2BACE2B5060F80003B45B /* MessageViewCode.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -357,7 +357,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 93F2BAC92B5060F80003B45B /* Build configuration list for PBXProject "MessageCursoViewCode" */;
+			buildConfigurationList = 93F2BAC92B5060F80003B45B /* Build configuration list for PBXProject "MessageViewCode" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -370,7 +370,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				93F2BACD2B5060F80003B45B /* MessageCursoViewCode */,
+				93F2BACD2B5060F80003B45B /* MessageViewCode */,
 			);
 		};
 /* End PBXProject section */
@@ -660,7 +660,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		93F2BAC92B5060F80003B45B /* Build configuration list for PBXProject "MessageCursoViewCode" */ = {
+		93F2BAC92B5060F80003B45B /* Build configuration list for PBXProject "MessageViewCode" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				93F2BAE02B5060FA0003B45B /* Debug */,
@@ -669,7 +669,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		93F2BAE22B5060FA0003B45B /* Build configuration list for PBXNativeTarget "MessageCursoViewCode" */ = {
+		93F2BAE22B5060FA0003B45B /* Build configuration list for PBXNativeTarget "MessageViewCode" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				93F2BAE32B5060FA0003B45B /* Debug */,
